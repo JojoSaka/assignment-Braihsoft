@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+USER PROFILE ANALYZER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GitHub Activity Tracker
+This project is a GitHub Activity Tracker that allows users to input their GitHub username and view:
 
-Currently, two official plugins are available:
+A list of their public repositories.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+An optional feature for visualizing weekly commit activity in a chart for each repository.
 
-## Expanding the ESLint configuration
+Built with React, TypeScript, and ShadCN UI for modern UI components.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Features
+Fetch Public Repos: View all public repositories of a GitHub user.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+View Weekly Commits: For each repository, visualize weekly commits in a line chart using Chart.js.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Smooth Scrolling: Includes a button to scroll to the bottom of the page after fetching repositories.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project was deployed on Netlify.app where you would have to upload the "dist" folder.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+Deployment
+To deploy this project on Netlify:
+
+Build the project to generate the production-ready files:
+
+bash
+Copy
+Edit
+npm run build
+# or if you're using yarn
+yarn build
+This will generate a dist folder containing all the production files.
+
+Upload the dist folder to Netlify:
+
+Go to Netlify and create a new site.
+
+Select the "Drag & Drop" option, then upload the entire dist folder.
+
+Once the deployment is complete, Netlify will provide a live URL where you can view your app.
